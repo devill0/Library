@@ -4,10 +4,10 @@ namespace Library.Core.Domain
 {
     public class Book
     {
-        public Guid Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public decimal Price { get; set; }
+        public Guid Id { get; }
+        public string Title { get; private set; }
+        public string Author { get; private set; }
+        public decimal Price { get; private set; }
 
         public Book(string title, string author, decimal price)
         {

@@ -9,3 +9,5 @@ E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web
 E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.AssemblyInfo.cs
 E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.dll
 E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.pdb
+E:\Programowanie\ASP\Library\src\Library.Web\bin\Debug\netcoreapp2.0\Library.Core.dll
+E:\Programowanie\ASP\Library\src\Library.Web\bin\Debug\netcoreapp2.0\Library.Core.pdb

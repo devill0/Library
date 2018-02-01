@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Library.Core.Domain;
+using Library.Core.Repository;
 using Library.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,22 +8,16 @@ namespace Library.Web.Controllers
     [Route("books")]
     public class BooksController : Controller
     {
-        private static List<BooksViewModel> books;
+        private readonly IBookRepository bookRepository;
 
-        public BooksController()
+        public BooksController(IBookRepository bookRepository)
         {
-            if (books == null)
-            {
-                books = new List<BooksViewModel>();
-                books.Add(new BooksViewModel { Id = Guid.NewGuid(), Title = "Harry Potter and the Philosopher's Stone", Author = "J. K. Rowlling", Price = 5.0M });
-                books.Add(new BooksViewModel { Id = Guid.NewGuid(), Title = "Harry Potter and the Chamber of Secrets", Author = "J. K. Rowlling", Price = 3.9M });
-                books.Add(new BooksViewModel { Id = Guid.NewGuid(), Title = "C# Head first!", Author = "Jennifer Greene, Andrew Stellman", Price = 10.0M });
-            }                                    
+            this.bookRepository = bookRepository;        
         }
 
         public IActionResult Index()
         {
-            return View(books);
+            return View(bookRepository);
         }
 
         [HttpGet("add")]
@@ -42,7 +34,7 @@ namespace Library.Web.Controllers
                 return View(viewModel);
             }
 
-            books.Add(new BooksViewModel());
+            bookRepository.Add(new Book(viewModel.Title, viewModel.Author, viewModel.Price));
 
             return View("Index");
         }

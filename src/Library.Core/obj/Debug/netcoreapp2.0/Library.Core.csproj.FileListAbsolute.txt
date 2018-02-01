@@ -1,0 +1,9 @@
+E:\Programowanie\ASP\Library\src\Library.Core\bin\Debug\netcoreapp2.0\Library.Core.deps.json
+E:\Programowanie\ASP\Library\src\Library.Core\bin\Debug\netcoreapp2.0\Library.Core.dll
+E:\Programowanie\ASP\Library\src\Library.Core\bin\Debug\netcoreapp2.0\Library.Core.pdb
+E:\Programowanie\ASP\Library\src\Library.Core\obj\Debug\netcoreapp2.0\Library.Core.csprojResolveAssemblyReference.cache
+E:\Programowanie\ASP\Library\src\Library.Core\obj\Debug\netcoreapp2.0\Library.Core.csproj.CoreCompileInputs.cache
+E:\Programowanie\ASP\Library\src\Library.Core\obj\Debug\netcoreapp2.0\Library.Core.AssemblyInfoInputs.cache
+E:\Programowanie\ASP\Library\src\Library.Core\obj\Debug\netcoreapp2.0\Library.Core.AssemblyInfo.cs
+E:\Programowanie\ASP\Library\src\Library.Core\obj\Debug\netcoreapp2.0\Library.Core.dll
+E:\Programowanie\ASP\Library\src\Library.Core\obj\Debug\netcoreapp2.0\Library.Core.pdb
