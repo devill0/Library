@@ -1,0 +1,11 @@
+E:\Programowanie\ASP\Library\src\Library.Web\bin\Debug\netcoreapp2.0\Library.Web.deps.json
+E:\Programowanie\ASP\Library\src\Library.Web\bin\Debug\netcoreapp2.0\Library.Web.runtimeconfig.json
+E:\Programowanie\ASP\Library\src\Library.Web\bin\Debug\netcoreapp2.0\Library.Web.runtimeconfig.dev.json
+E:\Programowanie\ASP\Library\src\Library.Web\bin\Debug\netcoreapp2.0\Library.Web.dll
+E:\Programowanie\ASP\Library\src\Library.Web\bin\Debug\netcoreapp2.0\Library.Web.pdb
+E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.csprojResolveAssemblyReference.cache
+E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.csproj.CoreCompileInputs.cache
+E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.AssemblyInfoInputs.cache
+E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.AssemblyInfo.cs
+E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.dll
+E:\Programowanie\ASP\Library\src\Library.Web\obj\Debug\netcoreapp2.0\Library.Web.pdb
