@@ -4,7 +4,7 @@ using Library.Core.Dto;
 
 namespace Library.Web.Framework
 {
-    public static class AutoMapper
+    public static class AutoMapperConfig
     {
         public static IMapper GetMapper()
             => new MapperConfiguration(cfg =>

@@ -1,23 +1,26 @@
-﻿using Library.Core.Domain;
-using Library.Core.Repository;
+﻿using Library.Core.Service;
 using Library.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Library.Web.Controllers
 {
     [Route("books")]
     public class BooksController : Controller
     {
-        private readonly IBookRepository bookRepository;
+        private readonly IBookService bookService;
 
-        public BooksController(IBookRepository bookRepository)
+        public BooksController(IBookService bookService)
         {
-            this.bookRepository = bookRepository;        
+            this.bookService = bookService;        
         }
 
         public IActionResult Index()
         {
-            return View(bookRepository);
+            var books = bookService.GetAll()
+                                   .Select(b => new BooksViewModel(b));
+
+            return View(books);
         }
 
         [HttpGet("add")]
@@ -34,7 +37,7 @@ namespace Library.Web.Controllers
                 return View(viewModel);
             }
 
-            bookRepository.Add(new Book(viewModel.Title, viewModel.Author, viewModel.Price));
+            bookService.Add(viewModel.Id, viewModel.Title, viewModel.Author, viewModel.Price);
 
             return View("Index");
         }
