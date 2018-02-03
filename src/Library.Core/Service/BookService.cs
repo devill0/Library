@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
 using Library.Core.Domain;
 using Library.Core.Dto;
 using Library.Core.Repository;
@@ -8,28 +11,35 @@ namespace Library.Core.Service
     public class BookService : IBookService
     {
         private readonly IBookRepository bookRepository;
+        private readonly IMapper mapper;
 
-        public BookService(IBookRepository bookRepository)
+        public BookService(IBookRepository bookRepository, IMapper mapper)
         {
             this.bookRepository = bookRepository;
+            this.mapper = mapper;
         }
 
         public void Add(Guid id, string title, string author, decimal price)
         {
-            throw new NotImplementedException();
+            var book = new Book(id, title, author, price);
+            bookRepository.Add(book);
         }
 
         public void Delete(Guid id)
             => bookRepository.Delete(id);
 
-        public Book Get(Guid id)
+        public BookDto Get(Guid id)
         {
-            throw new NotImplementedException();
-        }
+            var book = bookRepository.Get(id);
 
-        public BookDto GetAll()
+            return book == null ? null : mapper.Map<BookDto>(book);
+        } 
+        
+        public IEnumerable<BookDto> GetAll()
         {
-            throw new NotImplementedException();
+            var books = bookRepository.GetAll();
+
+            return mapper.Map<IEnumerable<BookDto>>(books);
         }
 
         public void Update(BookDto bookDto)
@@ -39,7 +49,7 @@ namespace Library.Core.Service
             {
                 throw new Exception($"Book with id:{bookDto.Id} was not found.");
             }
-            //Need to add code witch update the existingBook in Domain file
+            //Need to add code which update the existingBook in Domain file
             bookRepository.Update(existingBook);
         }
     }

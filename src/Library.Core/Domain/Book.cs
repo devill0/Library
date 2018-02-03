@@ -9,7 +9,11 @@ namespace Library.Core.Domain
         public string Author { get; private set; }
         public decimal Price { get; private set; }
 
-        public Book(string title, string author, decimal price)
+        public Book(string title, string author, decimal price) : this(Guid.NewGuid(), title, author, price)
+        {
+        }
+
+        public Book(Guid id, string title, string author, decimal price)
         {
             Id = Guid.NewGuid();
             Title = title;
