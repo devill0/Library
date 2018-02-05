@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Library.Core.Domain;
 using Library.Core.Dto;
@@ -36,9 +37,10 @@ namespace Library.Core.Service
         
         public IEnumerable<BookDto> GetAll()
         {
-            var books = bookRepository.GetAll();
+            var books = bookRepository.GetAll()
+                                      .Select(b => mapper.Map<BookDto>(b));
 
-            return mapper.Map<IEnumerable<BookDto>>(books);
+            return books;
         }
 
         public void Update(BookDto bookDto)

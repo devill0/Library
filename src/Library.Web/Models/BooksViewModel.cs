@@ -10,6 +10,10 @@ namespace Library.Web.Models
         public string Author { get; set; }
         public decimal Price { get; set; }
 
+        public BooksViewModel()
+        {
+        }
+
         public BooksViewModel(BookDto bookDto)
         {
             Id = bookDto.Id;

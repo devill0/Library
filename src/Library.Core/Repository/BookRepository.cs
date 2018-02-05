@@ -7,9 +7,10 @@ namespace Library.Core.Repository
 {
     public class BookRepository : IBookRepository
     {
-        private readonly ISet<Book> books = new HashSet<Book>()
+        private readonly static ISet<Book> books = new HashSet<Book>()
         {
-            new Book("Harry Potter and the Philosopher's Stone", "J. K. Rowlling", 5.0M)
+            new Book("Harry Potter and the Philosopher's Stone", "J. K. Rowlling", 5.0M),
+            new Book("Harry Potter and the Chamber of Secrets", "J. K. Rowlling", 6.0M),
         };
 
         public void Add(Book book)

@@ -15,6 +15,7 @@ namespace Library.Web.Controllers
             this.bookService = bookService;        
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var books = bookService.GetAll()
@@ -25,12 +26,14 @@ namespace Library.Web.Controllers
 
         [HttpGet("add")]
         public IActionResult AddBook()
-        {           
-            return View();
+        {
+            var viewModel = new AddBookViewModel();
+
+            return View(viewModel);
         }
 
         [HttpPost("add")]
-        public IActionResult AddBook(BooksViewModel viewModel)
+        public IActionResult AddBook(AddBookViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -39,7 +42,7 @@ namespace Library.Web.Controllers
 
             bookService.Add(viewModel.Id, viewModel.Title, viewModel.Author, viewModel.Price);
 
-            return View("Index");
+            return RedirectToAction(nameof(Index));
         }
     }
 }
