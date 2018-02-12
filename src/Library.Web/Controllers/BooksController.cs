@@ -1,7 +1,9 @@
 ﻿using Library.Core.Service;
 using Library.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 
 namespace Library.Web.Controllers
 {
@@ -39,9 +41,8 @@ namespace Library.Web.Controllers
             {
                 return View(viewModel);
             }
-
             bookService.Add(viewModel.Id, viewModel.Title, viewModel.Author, viewModel.Price);
-
+           
             return RedirectToAction(nameof(Index));
         }
     }
