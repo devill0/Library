@@ -1,17 +1,19 @@
 ﻿@model IEnumerable<BooksViewModel>
- 
-<a asp-controller="Books" asp-action="AddBook" class="btn btn-primary">Add book</a>
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="card-block">
-                    <h4 class="card-title">@item.Title</h4>
-                    <h6 class="card-subtitle">@item.Author</h6>
-                    <p class="card-text">Price: @item.Price PLN</p>
+
+<div class="form-group">
+    <a asp-controller="Books" asp-action="AddBook" class="btn btn-primary">Add book</a>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title">@item.Title</h4>
+                        <h6 class="card-subtitle">@item.Author</h6>
+                        <p class="card-text">Price: @item.Price PLN</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    }    
-</div>  
+        }
+    </div>
+</div>
