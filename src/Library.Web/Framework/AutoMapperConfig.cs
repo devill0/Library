@@ -10,6 +10,7 @@ namespace Library.Web.Framework
             => new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Book, BookDto>();
+                cfg.CreateMap<User, UserDto>();
 
             }).CreateMapper();
     }   
