@@ -1,4 +1,5 @@
-﻿using Library.Core.Service;
+﻿using AutoMapper;
+using Library.Core.Service;
 using Library.Web.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -58,7 +59,9 @@ namespace Library.Web.Controllers
         [HttpGet("register")]
         public IActionResult Register()
         {
-            return View();
+            var viewModel = new RegisterViewModel();
+
+            return View(viewModel);
         }
 
         [HttpPost("register")]
@@ -68,8 +71,18 @@ namespace Library.Web.Controllers
             {
                 return View(viewModel);
             }
+            try
+            {
+                userService.Register(viewModel.Email, viewModel.Password, viewModel.Role);
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError(string.Empty, e.Message);
 
-            return View();
+                return View(viewModel);
+            }
+
+            return RedirectToAction(nameof(Login));
         }
     }
 }

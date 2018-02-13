@@ -5,13 +5,15 @@
     <div class="col-md-4 col-lg-3">
         <form asp-controller="Account" asp-action="Login" method="post">
             <div class="form-group">
-                <label for="Email">Email address</label>
-                <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label asp-for="Email">Email address</label>
+                <input asp-for="Email" type="email" class="form-control">
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="Password">Password</label>
-                <input type="password" class="form-control" id="Password" placeholder="Password">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" type="password" class="form-control">
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-success">Login</button>
         </form>      

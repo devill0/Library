@@ -7,6 +7,7 @@ namespace Library.Core.Domain
         public Guid Id { get; }
         public string Email { get; private set; }
         public string Password { get; private set; }
+        public Role Role { get; set; }
 
         public User(string email, string password, Role role) : this(Guid.NewGuid(), email, password, role)
         {
