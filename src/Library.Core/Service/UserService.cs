@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using Library.Core.Domain;
 using Library.Core.Dto;
 using Library.Core.Repository;
+using System;
+using System.Collections.Generic;
 
 namespace Library.Core.Service
 {

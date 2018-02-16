@@ -50,10 +50,22 @@ namespace Library.Web.Controllers
                 new Claim(ClaimTypes.Name, user.Id.ToString())
             };
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            var principle = new ClaimsPrincipal(identity);
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principle);
+            var principal = new ClaimsPrincipal(identity);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
             return RedirectToAction("Index", "Books");
+        }
+
+        [HttpGet("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            await HttpContext.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet("register")]

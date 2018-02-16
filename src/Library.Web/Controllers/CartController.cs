@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Library.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Web.Controllers
@@ -11,6 +12,6 @@ namespace Library.Web.Controllers
         public IActionResult Index()
         {
             return View();
-        }
+        }        
     }
 }
