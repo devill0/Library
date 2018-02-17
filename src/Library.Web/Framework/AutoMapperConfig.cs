@@ -12,6 +12,8 @@ namespace Library.Web.Framework
             {
                 cfg.CreateMap<Book, BookDto>();
 
+                cfg.CreateMap<Cart, CartDto>();
+
                 cfg.CreateMap<User, UserDto>().ForMember(m => m.Role,
                     o => o.MapFrom(p => (RoleDto)Enum.Parse(typeof(RoleDto), p.Role.ToString(), true)));  
             }).CreateMapper();
