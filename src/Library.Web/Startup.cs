@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Shop.Web.Framework;
@@ -33,6 +34,10 @@ namespace Library.Web
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICartService, CartService>();
+            services.AddScoped<ICartManager, CartManager>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderService, OrderService>();
             services.AddSingleton(AutoMapperConfig.GetMapper());
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(c =>
@@ -41,6 +46,7 @@ namespace Library.Web
                     c.AccessDeniedPath = new PathString("/forbidden"); 
                     c.ExpireTimeSpan = TimeSpan.FromDays(7);
                 });
+            services.AddMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
